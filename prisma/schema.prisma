@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client"
+  output = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  date      DateTime
+  users     User[]
+  messageId Int      @unique
+  message   Message  @relation(fields: [messageId], references: [id])
+}
+
+model Message {
+  id    Int    @id @default(autoincrement())
+  text  String
+  event Event?
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  name      String
+  cellphone String
+  events    Event[]
+}
