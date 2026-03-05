@@ -1,5 +1,6 @@
 import { Controller, Inject } from '@nestjs/common';
-import { type IMessageService, MessageServiceSymbol } from './message.interface';
+import { type IMessageService } from './message.interface';
+import { MessageServiceSymbol } from './message.container';
 
 @Controller('/message')
 export class MessageController {

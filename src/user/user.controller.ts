@@ -1,5 +1,6 @@
 import { Controller, Inject } from '@nestjs/common';
-import { IUserController, type IUserService, UserServiceSymbol } from './user.interface';
+import { UserServiceSymbol } from './user.container';
+import { IUserController, type IUserService } from './user.interface';
 
 @Controller('/users')
 export class UserController implements IUserController {

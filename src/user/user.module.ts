@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
+import { UserControllerSymbol, UserRespositorySymbol, UserServiceSymbol } from './user.container';
 import { UserController } from './user.controller';
-import { UserService } from './user.service';
-import { UserControllerSymbol, UserRespositorySymbol, UserServiceSymbol } from './user.interface';
 import { UserRepository } from './user.repository';
+import { UserService } from './user.service';
 
 @Module({
-  imports: [],
   controllers: [UserController],
   providers: [
     {

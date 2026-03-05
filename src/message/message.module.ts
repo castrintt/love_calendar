@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { MessageService } from './message.service';
-import { MessageControllerSymbol, MessageRepositorySymbol, MessageServiceSymbol } from './message.interface';
-import { MessageRepository } from './message.repository';
 import { MessageController } from './message.controller';
+import { MessageRepository } from './message.repository';
+import { MessageService } from './message.service';
+import { MessageControllerSymbol, MessageRepositorySymbol, MessageServiceSymbol } from './message.container';
 
 @Module({
   imports: [],

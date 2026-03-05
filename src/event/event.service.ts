@@ -8,8 +8,4 @@ export class EventService implements IEventService {
         private readonly eventRepository: IEventRepository
     ) { }
 
-
-    findAll(): string {
-        return this.eventRepository.findAll() + " findall do service"
-    }
 }

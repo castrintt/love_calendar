@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client"
-  output = "../generated/prisma"
+  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -8,21 +8,21 @@ datasource db {
 }
 
 model Event {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   date      DateTime
   users     User[]
-  messageId Int      @unique
+  messageId String   @unique
   message   Message  @relation(fields: [messageId], references: [id])
 }
 
 model Message {
-  id    Int    @id @default(autoincrement())
+  id    String @id @default(uuid())
   text  String
   event Event?
 }
 
 model User {
-  id        Int     @id @default(autoincrement())
+  id        String  @id @default(uuid())
   name      String
   cellphone String
   events    Event[]
