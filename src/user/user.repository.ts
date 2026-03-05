@@ -10,6 +10,7 @@ export class UserRepository implements IUserRepository {
     async findAll(): Promise<User[]> {
         return await this.prisma.user.findMany()
     }
+
     async findById(id: string): Promise<User | null> {
         const user = await this.prisma.user.findFirst({
             where: { id }
