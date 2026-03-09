@@ -1,5 +1,6 @@
 import { Controller, Inject } from '@nestjs/common';
-import { type IEventService, EventServiceSymbol, IEventController } from './event.interface';
+import { type IEventService, IEventController } from './event.interface';
+import { EventServiceSymbol } from './event.container';
 
 @Controller('/event')
 export class EventController implements IEventController {
